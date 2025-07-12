@@ -10,7 +10,7 @@ class ProductController extends Controller {
         if ($category) {
             $products = $productModel->getByCategory($category);
         } elseif ($search) {
-            $products = $productModel->search($search);
+            $products = $productModel->searchProducts($search);
         } else {
             $products = $productModel->getAll();
         }
@@ -51,7 +51,7 @@ class ProductController extends Controller {
     public function search() {
         $query = $_GET['q'] ?? '';
         $productModel = new Product();
-        $products = $productModel->search($query);
+        $products = $productModel->searchProducts($query);
         
         $this->view->render('products/search', [
             'products' => $products

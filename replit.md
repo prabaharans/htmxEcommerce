@@ -17,9 +17,11 @@ Preferred communication style: Simple, everyday language.
 - **Design Approach**: Component-based styling with custom CSS variables for consistent theming
 
 ### Backend Architecture
-- **Server Technology**: Not explicitly defined in current codebase (likely Node.js/Express or similar)
+- **Server Technology**: PHP 8.1 with built-in development server
+- **Database**: PostgreSQL with PDO for database operations
 - **API Strategy**: HTMX-driven endpoints for dynamic content delivery
-- **Architecture Pattern**: Server-side rendering with progressive enhancement
+- **Architecture Pattern**: MVC (Model-View-Controller) with server-side rendering and progressive enhancement
+- **Data Persistence**: PostgreSQL database with proper relational structure and foreign key constraints
 
 ### Styling System
 - **CSS Architecture**: Custom properties (CSS variables) for theme management
@@ -49,14 +51,22 @@ Preferred communication style: Simple, everyday language.
 
 ## Data Flow
 
+### Database Architecture
+- **Products Table**: Product catalog with inventory management
+- **Orders Table**: Complete order tracking with customer information
+- **Order Items Table**: Detailed line items for each order
+- **Cart Sessions Table**: Persistent cart storage across sessions
+- **Users Table**: Customer and admin user management
+
 ### Client-Side Interactions
 1. **User Actions**: Trigger HTMX requests or JavaScript event handlers
-2. **State Management**: Local state updates through custom events (e.g., 'cartUpdated')
+2. **State Management**: Database-backed state with real-time updates
 3. **UI Updates**: Dynamic content updates via HTMX or direct DOM manipulation
 4. **Feedback**: Loading states and animations provide user feedback
 
 ### Component Communication
 - **Event-Driven**: Custom events for component communication
+- **Database-Backed**: All data persisted in PostgreSQL database
 - **Configuration**: Centralized app configuration object
 - **Progressive Enhancement**: Base functionality works without JavaScript
 
@@ -70,6 +80,8 @@ Preferred communication style: Simple, everyday language.
 ### Development Tools
 - **CSS**: Custom properties for theming, CSS transitions for animations
 - **JavaScript**: ES6+ features, event-driven architecture
+- **Database**: PostgreSQL with PDO for secure database operations
+- **PHP**: Modern PHP 8.1 with object-oriented MVC architecture
 
 ## Deployment Strategy
 

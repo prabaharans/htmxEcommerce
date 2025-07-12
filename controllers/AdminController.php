@@ -88,7 +88,7 @@ class AdminController extends Controller {
         ];
         
         $productModel = new Product();
-        $productModel->update($id, $data);
+        $productModel->updateProduct($id, $data);
         
         if ($this->isHtmxRequest()) {
             echo '<div class="alert alert-success">Product updated successfully!</div>';
@@ -101,7 +101,7 @@ class AdminController extends Controller {
         $id = $_POST['id'] ?? '';
         
         $productModel = new Product();
-        $productModel->delete($id);
+        $productModel->deleteProduct($id);
         
         if ($this->isHtmxRequest()) {
             echo '';
