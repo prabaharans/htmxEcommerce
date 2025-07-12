@@ -11,7 +11,7 @@ define('STRIPE_SECRET_KEY', $_ENV['STRIPE_SECRET_KEY'] ?? 'sk_test_default');
 
 // Currency settings
 define('CURRENCY', 'USD');
-define('CURRENCY_SYMBOL', '$');
+// define('CURRENCY_SYMBOL', '$');
 
 // Pagination settings
 define('PRODUCTS_PER_PAGE', 12);
@@ -24,7 +24,7 @@ spl_autoload_register(function($class) {
         'services/',
         'storage/'
     ];
-    
+
     foreach ($directories as $directory) {
         $file = $directory . $class . '.php';
         if (file_exists($file)) {
